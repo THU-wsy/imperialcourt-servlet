@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+         version="3.1">
+
+  <display-name>Archetype Created Web Application</display-name>
+
+  <!-- 配置 Web 应用初始化参数指定视图前缀、后缀 -->
+  <!--
+      物理视图举例：/WEB-INF/pages/index.html
+      对应逻辑视图：index
+  -->
+  <context-param>
+    <param-name>view-prefix</param-name>
+    <param-value>/WEB-INF/pages/</param-value>
+  </context-param>
+  <context-param>
+    <param-name>view-suffix</param-name>
+    <param-value>.html</param-value>
+  </context-param>
+
+  <filter>
+    <filter-name>LoginFilter</filter-name>
+    <filter-class>com.thuwsy.imperialcourt.filter.LoginFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>LoginFilter</filter-name>
+    <url-pattern>/work</url-pattern>
+  </filter-mapping>
+
+  <filter>
+    <filter-name>TransactionFilter</filter-name>
+    <filter-class>com.thuwsy.imperialcourt.filter.TransactionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>TransactionFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+
+
+</web-app>
